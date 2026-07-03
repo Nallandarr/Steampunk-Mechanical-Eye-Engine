@@ -1,0 +1,89 @@
+:root {
+    --bg-0: #0b0a08;
+    --bg-1: #14110d;
+
+    --metal-dark: #2a1f14;
+    --metal-mid: #6b5233;
+    --metal-light: #c8a46a;
+
+    --brass-0: #3b2a1a;
+    --brass-1: #a07a42;
+    --brass-2: #f0d39a;
+
+    --iris-0: #ffb347;
+    --iris-1: #d67814;
+    --iris-2: #4a220b;
+
+    --stroke: rgba(255,255,255,0.08);
+
+    --glow: rgba(255, 170, 80, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(
+        circle at center,
+        var(--bg-1),
+        var(--bg-0)
+    );
+
+    font-family: system-ui, sans-serif;
+    overflow: hidden;
+}
+
+.application {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#eye-container {
+    width: 360px;
+    height: 360px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    filter: drop-shadow(0px 0px 25px var(--glow));
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+}
+
+#eye-container::before {
+    content: "";
+
+    position: absolute;
+    width: 110%;
+    height: 110%;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 170, 80, 0.08),
+        transparent 60%
+    );
+
+    pointer-events: none;
+}
